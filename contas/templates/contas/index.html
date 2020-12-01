@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>InvestSystem</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>InvestSystem</h1>
+  <p>Quant Finance</p>
+</div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 1000"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "description": "USD/BRL",
+      "proName": "FX_IDC:USDBRL"
+    },
+    {
+      "description": "IBOV",
+      "proName": "BMFBOVESPA:IBOV"
+    },
+    {
+      "description": "EWZ",
+      "proName": "AMEX:EWZ"
+    },
+    {
+      "description": "BRENT",
+      "proName": "TVC:UKOIL"
+    },
+    {
+      "description": "WIT",
+      "proName": "TVC:USOIL"
+    }
+  ],
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "br"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="{%url 'url_home1'%}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Posicao Players
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{%url 'url_posicaoBBAS'%}">BBAS3</a>
+      <a class="dropdown-item active" href="{%url 'url_posicaopetr4'%}">PETR4</a>
+      <a class="dropdown-item active" href="{%url 'url_posicaoitub4'%}">ITUB4</a>
+      <a class="dropdown-item active" href="{%url 'url_posicaobbdc4'%}">BBDC4</a>
+      <a class="dropdown-item disabled" href="">Em Breve VALE3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Análise de Dados
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{%url 'url_mapapetr4'%}">PETR4</a>
+      <a class="dropdown-item disabled" href="{%url 'url_posicaopetr4'%}">Em breve Vale</a>
+      <a class="dropdown-item disabled" href="{%url 'url_posicaoitub4'%}">Em breve ITUB4</a>
+      <a class="dropdown-item disabled" href="{%url 'url_posicaobbdc4'%}">Em breve BBDC4</a>
+      <a class="dropdown-item disabled" href="">Em Breve JBSS3</a>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'url_roboput'%}">Robô Put</a>
+      </li>
+      <li class="nav-item">
+        <div class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-outline-danger">
+            <a class="nav-link" href="{%url 'url_news'%}">News</a>
+          </button>
+        </div>      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'url_rolagens'%}">Rolagem</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'url_painel'%}">Painel Cotacao</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'url_fundamentos'%}">Fundamentos</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-4">
+
+      <style>
+        p  {
+          color: black;
+          font-family: verdana;
+          font-size: 80%;
+        }
+        </style>
+          <!------------------------   Untitled design-336x280   ------------------------>
+          <script type="text/javascript">
+            var bannersnack_embed = {"hash":"bxh9auckr","width":336,"height":280,"t":1606407755,"userId":43020232,"type":"html5"};
+            </script>
+            <script type="text/javascript" src="//cdn.bannersnack.com/iframe/embed.js"></script>
+     
+        
+      <h3>Escolha a opção assinar</h3>
+      <p>A cobrança será mensalmente e você pode cancelar quando quiser, assim você ajuda o projeto a crescer.</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><a class="nav-link" href="#"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="W3FMANZ7BX37Y">
+            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcltjjRUQ0RZOFlSWUtPTU1LNjEzUDVaSFVaQVExTy4u">Responda Nossa Pesquisa</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link active" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcltjjRUN01XU1lXVE1XRzgxWE5TRlNRNEUxSFY4Ti4u">Novo na Platarforma? Preencha o formulário</a>
+        </li>
+      </ul>
+      <div>
+        <h5>Disclaimer</h5>
+         <a>
+           <style>
+             a {
+               font-size: 70%;
+               text-align: center;
+              }
+           </style>
+                As informações disponibilizadas na ferramenta, não configuram um relatório de análise
+                ou qualquer tipo de recomendação e foram obtidas a partir de fontes públicas como a
+                CVM. Rentabilidade passada não representa garantia de resultados futuros e apesar do
+                cuidado na coleta e manuseio das informações, elas não foram conferidas
+                individualmente. As informações são enviadas pelos próprios gestores aos órgãos
+                reguladores e podem haver divergências pontuais e atraso em determinadas
+                atualizações. Não ha garantias em sua exatidão, atualização, precisão, adequação,
+                integridade ou veracidade, tampouco se responsabilizam pela publicação acidental de
+                dados incorretos.
+                É proibida a reprodução total ou parcial de textos, fotos, ilustrações ou qualquer outro
+                conteúdo deste site por qualquer meio sem a prévia autorização de seu autor/criador ou
+                do administrador, conforme LEI Nº 9.610, de 19 de fevereiro de 1998.
+          </a>
+      </div>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      <p><b>Calendário Econômico</b></p>
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/markets/currencies/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+          {
+          "colorTheme": "dark",
+          "isTransparent": false,
+          "width": "510",
+          "height": "600",
+          "locale": "br",
+          "importanceFilter": "0,1",
+          "currencyFilter": "BRL,CNY,USD,EUR"
+        }
+        </script>
+      </div>
+      <div class="col-sm-8">
+      <!-- TradingView Widget END -->
+        <div>
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div id="tradingview_a1228"></div>
+            <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/symbols/TVC-UKOIL/" rel="noopener" target="_blank"><span class="blue-text">Gráfico Brent OIL</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+              new TradingView.widget(
+              {
+              "width": 500,
+              "height": 400,
+              "symbol": "TVC:UKOIL",
+              "interval": "D",
+              "timezone": "Etc/UTC",
+              "theme": "dark",
+              "style": "1",
+              "locale": "br",
+              "toolbar_bg": "#f1f3f6",
+              "enable_publishing": false,
+              "allow_symbol_change": true,
+              "container_id": "tradingview_a1228"
+            }
+              );
+            </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"></span></a>InvestSystem</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "description": "ITUB",
+      "proName": "NYSE:ITUB"
+    },
+    {
+      "description": "BBDC",
+      "proName": "NYSE:BBD"
+    },
+    {
+      "description": "PETR",
+      "proName": "NYSE:PBR"
+    },
+    {
+      "description": "VALE",
+      "proName": "NYSE:VALE"
+    },
+    {
+      "description": "EWZ",
+      "proName": "AMEX:EWZ"
+    }
+  ],
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "locale": "br"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+</div>
+
+</body>
+</html>
+

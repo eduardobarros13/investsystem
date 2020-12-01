@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>InvestSystem</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>InvestSystem</h1>
+  <a href="http://investsystem.ngrok.io/home1/" target="_self" title="IvestSystem">Quant Finance - Área de estudos</a>
+</div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 1000"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "description": "USD/BRL",
+      "proName": "FX_IDC:USDBRL"
+    },
+    {
+      "description": "EWZ",
+      "proName": "AMEX:EWZ"
+    },
+    {
+      "description": "BRENT",
+      "proName": "TVC:UKOIL"
+    },
+    {
+      "description": "WIT",
+      "proName": "TVC:USOIL"
+    }
+  ],
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "br"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Treinamento</h3>
+        <h6>Conhecendo o sistema</h6>
+      <iframe width="700" height="500" src="https://www.youtube.com/embed/videoseries?list=PLqu8zPFXgwkVgmLff4aBkuChpiDMCakPk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe><br><br><br>
+      <!------------------------   Untitled design-700x150   ------------------------>
+      <script type="text/javascript">
+        var bannersnack_embed = {"hash":"bdkmqpnj7","width":700,"height":150,"t":1606436308,"userId":43020232,"type":"html5"};
+        </script>
+        <script type="text/javascript" src="//cdn.bannersnack.com/iframe/embed.js"></script>
+        <br>
+      <div>
+        <p class="change-form-p">Para deslogar,<a href="http://investsystem.ngrok.io/logout"><button type="text" class="btn btn-info">Sair</button></a></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <ul class="nav nav-pills flex-column"><br><br>
+      <style>
+        p  {
+          color: black;
+          font-family: verdana;
+          font-size: 80%;
+          align="justify";
+        }
+        a  {
+          color: black;
+          font-family: verdana;
+          font-size: 70%;
+          text-align: center;
+
+        }
+        </style>
+      <h3>Escolha a opção assinar</h3>
+      <p align="justify">A cobrança será mensalmente e você pode cancelar quando quiser, assim você ajuda o projeto a crescer. Não somos uma plataforma de venda de cusros, portanto não temos responsabilidades em seus investimentos, sejam eles lucro e/ou prejuízo.</p>
+
+        <li class="nav-item">
+          <div id="paypal-button-container"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=AflWb9Tkeciod7PFAUnKlx52Fwv3396-cNfJBfeOwwnyaXwjYW1fX_YIqwobU2CXaXuPFyYqgESpyXwZ&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+            <script>
+              paypal.Buttons({
+                  style: {
+                      shape: 'rect',
+                      color: 'gold',
+                      layout: 'vertical',
+                      label: 'subscribe'
+                  },
+                  createSubscription: function(data, actions) {
+                    return actions.subscription.create({
+                      'plan_id': 'P-32A91918LF140972JL6QKQFI'
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    alert(data.subscriptionID);
+                  }
+              }).render('#paypal-button-container');
+            </script>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcltjjRUQ0RZOFlSWUtPTU1LNjEzUDVaSFVaQVExTy4u">Responda Nossa Pesquisa</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link active" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcltjjRUN01XU1lXVE1XRzgxWE5TRlNRNEUxSFY4Ti4u">Novo na Platarforma? Preencha o formulário</a>
+        </li>
+     </ul><br>
+        <h6>Disclaimer</h6>
+        <p align="justify">As informações disponibilizadas na ferramenta, não configuram um relatório de análise
+                ou qualquer tipo de recomendação e foram obtidas a partir de fontes públicas como a
+                CVM. Rentabilidade passada não representa garantia de resultados futuros e apesar do
+                cuidado na coleta e manuseio das informações, elas não foram conferidas
+                individualmente. As informações são enviadas pelos próprios gestores aos órgãos
+                reguladores e podem haver divergências pontuais e atraso em determinadas
+                atualizações. Não ha garantias em sua exatidão, atualização, precisão, adequação,
+                integridade ou veracidade, tampouco se responsabilizam pela publicação acidental de
+                dados incorretos.
+                É proibida a reprodução total ou parcial de textos, fotos, ilustrações ou qualquer outro
+                conteúdo deste site por qualquer meio sem a prévia autorização de seu autor/criador ou
+                do administrador, conforme LEI Nº 9.610, de 19 de fevereiro de 1998.</p>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

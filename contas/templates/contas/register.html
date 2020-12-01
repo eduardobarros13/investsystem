@@ -1,0 +1,54 @@
+{% extends 'contas/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+                <div id="paypal-button-container"></div>
+                <script src="https://www.paypal.com/sdk/js?client-id=AflWb9Tkeciod7PFAUnKlx52Fwv3396-cNfJBfeOwwnyaXwjYW1fX_YIqwobU2CXaXuPFyYqgESpyXwZ&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+                <script>
+                  paypal.Buttons({
+                      style: {
+                          shape: 'rect',
+                          color: 'gold',
+                          layout: 'vertical',
+                          label: 'subscribe'
+                      },
+                      createSubscription: function(data, actions) {
+                        return actions.subscription.create({
+                          'plan_id': 'P-32A91918LF140972JL6QKQFI'
+                        });
+                      },
+                      onApprove: function(data, actions) {
+                        alert(data.subscriptionID);
+                      }
+                  }).render('#paypal-button-container');
+                </script>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card  auth-card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Registre-se o sistema</h4>
+            
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+            
+                        {{ form|crispy }}
+
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    </form>
+
+                    <p class="change-form-p">Já possui uma conta? <a href="http://investsystem.ngrok.io/login/">Clique aqui!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

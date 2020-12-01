@@ -1,0 +1,107 @@
+{% extends 'contas/base1.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+
+<!-- Inicio do processo logico-->
+<style>
+<style>
+    ul  {
+     color: black;
+     font-family: verdana;
+     font-size: 85%;
+     text-align: right;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+
+    th, td {
+      padding: 1px;
+      text-align: center;
+    }
+
+    tbody {
+      font-size: 85%;
+      letter-spacing: 1px
+      padding: 1px;
+      text-align: center;
+    }
+    thead {
+
+    td{
+      text-align: center;
+      1px solid black;
+    }
+</style>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Empresa</th>
+            <th>Cotacao</th>
+            <th>Preco/VPA</th>
+            <th>Dividendos 12m</th>
+            <th>VPA</th>
+            <th>Lucro/Ação</th>
+            <th>Preço By Graham</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>{% for empresa in Empresa%}
+                    <ul>{{empresa}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for cotacao in Cotacao%}
+                    <ul>R$ {{cotacao}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for precoVPA in PrecoVPA%}
+                    <ul>{{precoVPA}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for dividendos in Dividendos%}
+                    <ul>{{dividendos}}%</ul>
+                    {%endfor%}
+                </ul>
+            <td>
+                <ul>{% for VPA in VPA%}
+                    <ul>{{VPA}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for LucroAcao in LucroAcao%}
+                    {%if LucroAcao < 0%}
+                    <ul style="color: red"><b>{{LucroAcao}}</b></ul>
+                    {%else%}
+                    <ul>{{LucroAcao}}</ul>
+                    {%endif%}
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for Graham in Graham%}
+                    <ul>R$ {{Graham}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'contas/base1.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+
+<style>
+    ul  {
+     color: black;
+     font-family: verdana;
+     font-size: 85%;
+     text-align: right;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+
+    th, td {
+      padding: 1px;
+      text-align: center;
+    }
+
+    tbody {
+      font-size: 85%;
+      letter-spacing: 1px
+      padding: 1px;
+      text-align: center;
+    }
+    thead {
+
+    td{
+      text-align: center;
+      1px solid black;
+    }
+</style>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Empresa</th>
+            <th>DataEx</th>
+            <th>PrevPag</th>
+            <th>Valor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>{% for empresa in Empresa%}
+                    <ul>{{empresa}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for DataEx in DataEx%}
+                    <ul>{{DataEx}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for PrevPag in PrevPag%}
+                    <ul>{{PrevPag}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+            <td>
+                <ul>{% for Valor in Valor%}
+                    <ul>{{Valor}}</ul>
+                    {%endfor%}
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

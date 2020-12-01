@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34bbc2a2-c9d3-4fcd-b1a9-6daf65d1fb4a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/contas/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1iIFR5Wp6zwbLHSracFAl9qiTL2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/contas/templates/contas" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eduardo\OneDrive\Trade_Edu\Projeto_django\contas\templates\contas" />
+      <recent name="$PROJECT_DIR$/contas/templates/contas" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controle_gastos" />
+      <recent name="$PROJECT_DIR$/contas/templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.views">
+    <configuration name="Robo_put_petr4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Projeto_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Robo_put_petr4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Projeto_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/contas" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/contas/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Robo_put_petr4" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34bbc2a2-c9d3-4fcd-b1a9-6daf65d1fb4a" name="Default Changelist" comment="" />
+      <created>1601587188277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601587188277</updated>
+    </task>
+    <task id="LOCAL-00001" summary="ATUALIZACAO">
+      <created>1602198135343</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602198135343</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ATUALIZACAO">
+      <created>1603620604778</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603620604779</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ATUALIZACAO">
+      <created>1603666614973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603666614973</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ATUALIZACAO">
+      <created>1603668142499</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603668142499</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ATUALIZACAO">
+      <created>1603669992406</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603669992406</updated>
+    </task>
+    <task id="LOCAL-00006" summary="nova versao">
+      <created>1603742812582</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603742812583</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ATUALIZACAO">
+      <created>1603839117683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603839117683</updated>
+    </task>
+    <task id="LOCAL-00008" summary="atualizaco">
+      <created>1604164504368</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604164504368</updated>
+    </task>
+    <task id="LOCAL-00009" summary="atualizaco">
+      <created>1604169191112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604169191112</updated>
+    </task>
+    <task id="LOCAL-00010" summary="atualizaco">
+      <created>1604169665081</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604169665081</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ATUALIZACAO">
+      <created>1604173762510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604173762510</updated>
+    </task>
+    <task id="LOCAL-00012" summary="atualizacao">
+      <created>1604272250867</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604272250867</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ATUALIZACAO">
+      <created>1604281587482</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604281587482</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ATUALIZACAO">
+      <created>1604315791436</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604315791436</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ATUALIZACAO">
+      <created>1604322262838</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604322262838</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ATUALIZACAO">
+      <created>1604337831325</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604337831325</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="BEK_SORT_TYPE" value="1" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="nova versao" />
+    <MESSAGE value="atualizaco" />
+    <MESSAGE value="atualizacao" />
+    <MESSAGE value="ATUALIZACAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="ATUALIZACAO" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-523" y="530" key="#Notifications" timestamp="1603742571465">
+      <screen x="-900" y="0" width="900" height="1560" />
+    </state>
+    <state x="-523" y="530" key="#Notifications/0.0.1280.984/-900.0.900.1560@-900.0.900.1560" timestamp="1603742571465" />
+    <state x="543" y="334" key="#Notifications/0.0.1280.984/-900.0.900.1560@0.0.1280.984" timestamp="1603738159465" />
+    <state x="611" y="298" key="#Notifications/0.23.1440.810@0.23.1440.810" timestamp="1601588079677" />
+    <state x="462" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601589269070">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="462" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.810@0.23.1440.810" timestamp="1601589269070" />
+    <state x="332" y="23" width="775" height="810" key="CommitChangelistDialog2" timestamp="1604337831116">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="332" y="23" width="775" height="810" key="CommitChangelistDialog2/0.23.1440.810@0.23.1440.810" timestamp="1604337831116" />
+    <state width="1419" height="201" key="GridCell.Tab.0.bottom" timestamp="1603621946212">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603048019348" />
+    <state width="1419" height="201" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1603621946212" />
+    <state width="1419" height="201" key="GridCell.Tab.0.center" timestamp="1603621946211">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603048019348" />
+    <state width="1419" height="201" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1603621946211" />
+    <state width="1419" height="201" key="GridCell.Tab.0.left" timestamp="1603621946211">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603048019348" />
+    <state width="1419" height="201" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1603621946211" />
+    <state width="1419" height="201" key="GridCell.Tab.0.right" timestamp="1603621946212">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1579" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603048019348" />
+    <state width="1419" height="201" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1603621946211" />
+    <state x="-900" y="85" key="SettingsEditor" timestamp="1603742591970">
+      <screen x="-900" y="0" width="900" height="1560" />
+    </state>
+    <state x="-900" y="85" key="SettingsEditor/0.0.1280.984/-900.0.900.1560@-900.0.900.1560" timestamp="1603742591970" />
+    <state x="254" y="47" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603047745380" />
+    <state x="229" y="67" key="SettingsEditor/0.23.1440.810@0.23.1440.810" timestamp="1601760157898" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1604169856659">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="-816" y="357" key="Vcs.Push.Dialog.v2/0.0.1280.984/-900.0.900.1560@-900.0.900.1560" timestamp="1603839045664" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984/-900.0.900.1560@0.0.1280.984" timestamp="1604169856659" />
+    <state x="523" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603493314456">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="523" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.810@0.23.1440.810" timestamp="1603493314456" />
+    <state x="428" y="142" width="745" height="718" key="search.everywhere.popup" timestamp="1603377098543">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="428" y="142" width="745" height="718" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1603377098543" />
+    <state x="385" y="157" width="670" height="676" key="search.everywhere.popup/0.23.1440.810@0.23.1440.810" timestamp="1602115112379" />
+  </component>
+</project>
