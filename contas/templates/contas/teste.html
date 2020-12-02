@@ -11,59 +11,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<style>
-    .bt {
-        width: 100%;
-        max-width: 100px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .bt {
-        border: none;
-        cursor: pointer;
-        background: #aaaaaa;
-        color: #ffffff;
-        display: inline-block;
-        margin: 5px;
-        padding: 5px 10px;
-        border: 1px solid #666666;
-
-    }
-
-    .bt :hover {
-        background: #333333;
-    }
-
-    .bt {
-        position: absolute;
-        right: 10px;
-        /* posiciona a 90px para a esquerda */
-        top: 10px;
-        /* posiciona a 70px para baixo */
-    }
-</style>
 
 <body>
-    <div class="container-fluid">
+    <style>
+        .bt {
+              width: 100%;
+              max-width: 100px;
+              margin: 0 auto;
+              text-align: center;
+        }
 
+        .bt {
+              border: none;
+              cursor: pointer;
+              background: #aaaaaa;
+              color: #ffffff;
+              display: inline-block;
+              margin: 5px;
+              padding: 5px 10px;
+              border: 1px solid #666666;
+              float: center;
+        }
+
+        .bt :hover {
+            background: #333333;
+        }
+
+    </style>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <!-- Brand -->
             <a class="navbar-brand" href="/home1">Home</a>
 
+
+
             <!-- Links -->
             <div class="navbar-nav">
-
                 <li class="nav-item">
                     <div class="btn-group btn-group-sm">
                         <button type="button" class="btn btn-outline-danger">
                             <a class="nav-link" href="/news">News</a>
                         </button>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="btn-group btn-group-sm">
                         <button type="button" class="btn btn-outline-danger">
                             <a class="nav-link" href="/painel">Painel de Cotação</a>
-                        </button>
-                        <button type="button" class="btn btn-outline-danger">
-                            <a class="nav-link" href="/academia">Treinamento</a>
                         </button>
                     </div>
                 </li>
@@ -110,7 +104,10 @@
                     </button>
                 </div>
                 </ul>
-                <a class="bt" href="/login">Login</a>
+            <div class="bt-container">
+                <button class='bt' type='submit'>OK</button>
+            </div>
+        </div>
         </nav>
 
         <div class="jumbotron text-center">
