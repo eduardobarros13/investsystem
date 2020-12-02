@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>InvestSystem</title>
     <meta charset="utf-8">
@@ -10,83 +11,85 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<div class="container-fluid">
+    <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <!-- Brand -->
-        <a class="navbar-brand" href="/home1">Home</a>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/home1">Home</a>
 
-        <!-- Links -->
-        <div class="navbar-nav">
-            <li class="nav-item">
+            <!-- Links -->
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-outline-danger">
+                            <a class="nav-link" href="/news">News</a>
+                        </button>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-outline-danger">
+                            <a class="nav-link" href="/painel">Painel de Cotação</a>
+                        </button>
+                    </div>
+                </li>
+
+                <!-- Dropdown -->
                 <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-outline-danger">
-                        <a class="nav-link" href="/news">News</a>
+                    <button type="button" class="btn btn-outline-warning">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Posição dos Players
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/posicaopetr4">Posição PETR4</a>
+                                <a class="dropdown-item" href="/posicaoitub4">Posição ITUB4</a>
+                                <a class="dropdown-item" href="/posicaobbdc4">Posição BBDC4</a>
+                                <a class="dropdown-item" href="/posicaobbas">Posição BBSA3</a>
+
+                            </div>
+                        </li>
+                    </button>
+                    <button type="button" class="btn btn-outline-warning">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Mapeamentos
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/mapapetr4">Mapa PETR4</a>
+                                <a class="dropdown-item" href="#">Mapa ITUB4</a>
+                                <a class="dropdown-item" href="#">Mapa BBDC4</a>
+                            </div>
+                        </li>
+                    </button>
+                    <button type="button" class="btn btn-outline-warning">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Operacional
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/put">Rastreador de PUTs</a>
+                                <a class="dropdown-item" href="/dividendos">Previsão de Dividendos</a>
+                                <a class="dropdown-item" href="/fundamentos">Rastreador Fundamentalista</a>
+                            </div>
+                        </li>
                     </button>
                 </div>
-            </li>
-            <li class="nav-item">
-                <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-outline-danger">
-                        <a class="nav-link" href="/painel">Painel de Cotação</a>
-                    </button>
-                </div>
-            </li>
+                </ul>
+        </nav>
 
-            <!-- Dropdown -->
-            <div class="btn-group btn-group-sm">
-                <button type="button" class="btn btn-outline-warning">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Posição dos Players
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/posicaopetr4">Posição PETR4</a>
-                            <a class="dropdown-item" href="/posicaoitub4">Posição ITUB4</a>
-                            <a class="dropdown-item" href="/posicaobbdc4">Posição BBDC4</a>
-                            <a class="dropdown-item" href="/posicaobbas">Posição BBSA3</a>
+        <div class="jumbotron text-center">
+            <h1>InvestSystem</h1>
+            <p>Quant Finance</p>
+        </div>
 
-                        </div>
-                    </li>
-                </button>
-                <button type="button" class="btn btn-outline-warning">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Mapeamentos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/mapapetr4">Mapa PETR4</a>
-                            <a class="dropdown-item" href="#">Mapa ITUB4</a>
-                            <a class="dropdown-item" href="#">Mapa BBDC4</a>
-                        </div>
-                    </li>
-                </button>
-                <button type="button" class="btn btn-outline-warning">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Operacional
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/put">Rastreador de PUTs</a>
-                            <a class="dropdown-item" href="/dividendos">Previsão de Dividendos</a>
-                            <a class="dropdown-item" href="/fundamentos">Rastreador Fundamentalista</a>
-                        </div>
-                    </li>
-                </button>
-            </div>
-            </ul>
-    </nav>
+        {% block content %}
+        {% endblock %}
 
-    <div class="jumbotron text-center">
-        <h1>InvestSystem</h1>
-        <p>Quant Finance</p>
+
     </div>
-
-    {% block content %}
-    {% endblock %}
-
-
-</div>
 </body>
+
 </html>
