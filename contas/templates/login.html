@@ -1,89 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>InvestSystem</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+{% extends 'contas/base1.html' %}
+{% load crispy_forms_tags %}
 
-<div class="jumbotron text-center">
-  <h1>IvestSystem</h1>
-  <a href="http://investsystem.ngrok.io/home1/" target="_self" title="IvestSystem">Quant Finance - Área de estudos</a>
-</div>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "Nasdaq 1000"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
-    },
-    {
-      "description": "USD/BRL",
-      "proName": "FX_IDC:USDBRL"
-    },
-    {
-      "description": "EWZ",
-      "proName": "AMEX:EWZ"
-    },
-    {
-      "description": "BRENT",
-      "proName": "TVC:UKOIL"
-    },
-    {
-      "description": "WIT",
-      "proName": "TVC:USOIL"
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+
+<style>
+  ul {
+    color: black;
+    font-family: verdana;
+    font-size: 85%;
+    text-align: right;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+
+  th,
+  td {
+    padding: 1px;
+    text-align: center;
+  }
+
+  tbody {
+    font-size: 85%;
+    letter-spacing: 1px padding: 1px;
+    text-align: center;
+  }
+
+  thead {
+
+    td {
+      text-align: center;
+      1px solid black;
     }
-  ],
-  "colorTheme": "dark",
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "locale": "br"
-}
-  </script>
-</div>
+</style>
 
 <div class="container mt-4">
-    <form action="submit", method="POST">{% csrf_token%}
-        <h2>InvestSystem</h2>
-        <div class="form-group">
-            <label for="username">Usuario</label>
-            <input type="text", class="form-control" id="username" name="username" 
-              placeholder="username">
-        </div>
-        <div class="form-group">
-            <label for="password">Senha</label>
-            <input type="password", class="form-control" id="password" name="password" placeholder="Senha">
-        </div>
-        <div>
-            {% for message in messages%}
-            <div class="alert alert-danger">
-                <strong>Error</strong> {{message}}
-            </div>
-            {%endfor%}
-            <button type="submit" class="btn btn-success">Entrar</button>
-            <p class="change-form-p">Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
-
-        </div>
-    </form>
+  <form action="submit" , method="POST">{% csrf_token%}
+    <h2>InvestSystem</h2>
+    <div class="form-group">
+      <label for="username">Usuario</label>
+      <input type="text" , class="form-control" id="username" name="username" placeholder="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input type="password" , class="form-control" id="password" name="password" placeholder="Senha">
+    </div>
+    <div>
+      {% for message in messages%}
+      <div class="alert alert-danger">
+        <strong>Error</strong> {{message}}
+      </div>
+      {%endfor%}
+      <button type="submit" class="btn btn-success">Entrar</button>
+    </div>
+  </form>
 
 </div>
 
-</body>
-</html>
+{% endblock %}
