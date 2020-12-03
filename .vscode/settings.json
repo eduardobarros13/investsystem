@@ -1,5 +1,5 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "/Users/eduardobarros/opt/anaconda3/bin/python",
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
     "workbench.colorTheme": "Dracula"
 }
