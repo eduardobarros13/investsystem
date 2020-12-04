@@ -260,6 +260,22 @@ def mapaPETR(request):
     return render(request, 'contas/mapapetr4.html', data)
 
 @login_required(login_url='/login/')
+def mapaITUB(request):
+    data = {}
+    mapaITUB = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Projeto_django/Robo_PUT_ITUB4.xlsx",header=0)
+
+    data['STRIKE'] = mapaITUB['STRIKE']
+    data['ATIVO'] = mapaITUB['ATIVO']
+    data['VENCIMENTO'] = mapaITUB['VENC.']
+    data['SINAL'] = mapaITUB['Robo PUT']
+    data['COTACAO'] = mapaITUB['Real Time']
+    data['Tretorno'] = round(mapaITUB['TIR (%)']*100,4)
+    data['PROTECAO'] = round(mapaITUB['Strike VS Cot. (%)']*100,2)
+    data['ProbExerc'] = mapaITUB['Prob. Exec.']
+    data['Negocios'] = mapaITUB['Negocios']
+    return render(request, 'contas/mapaitub4.html', data)
+
+@login_required(login_url='/login/')
 def index(request):
     data = {}
     return render(request, 'contas/index.html', data)

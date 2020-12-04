@@ -1,0 +1,119 @@
+{% extends 'contas/base1.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+
+<!-- Inicio do processo logico-->
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  ul  {
+    color: black;
+    font-family: verdana;
+    font-size: 85%;
+    text-align: right;
+  }
+
+  th, td {
+    padding: 1px;
+    text-align: center;
+  }
+</style>
+
+<div class="table-responsive">
+  <table class="table">
+   <thead>
+      <tr style="text-align: center" >
+        <th><small><b>Strike<b/></small></th>
+        <th><small><b>Ativo<b/></small></th>
+        <th><small><b>Vencimento<b/></small></th>
+        <th><small><b>Sinal<b/></small></th>
+        <th><small><b>Cotacao<b/></small></th>
+        <th><small><b>Taxa de Retorno<b/></small></th>
+        <th><small><b>Protecao <b/></small></th>
+        <th><small><b>Prob. Exercicio<b/></small></th>
+        <th><small><b>Negócios<b/></small></th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            {% for strike in STRIKE%}
+            <ul>{{strike}}</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for ativo in ATIVO%}
+            <ul>{{ativo}}</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for vencimento in VENCIMENTO%}
+            <ul>{{vencimento}}</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for sinal in SINAL%}
+            {%if sinal == "Montar"%}
+            <ul style="color: green"><b>{{sinal}}</b></ul>
+            {%else%}
+            <ul style="color: red">{{sinal}}</ul>
+            {%endif%}
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for cotacao in COTACAO%}
+            <ul>R${{cotacao}}</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for Tretorno in Tretorno%}
+            {%if Tretorno < 0.5%}
+            <ul style="color: Red"><b>{{Tretorno}}%</b></ul>
+            {%else%}
+            <ul style="color: green">{{Tretorno}}%</ul>
+            {%endif%}
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for protecao in PROTECAO%}
+            <ul>{{protecao}}%</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for ProbExerc in ProbExerc%}
+            <ul>{{ProbExerc}}%</ul>
+            {%endfor%}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for Negocios in Negocios%}
+            <ul>{{Negocios}}</ul>
+            {%endfor%}
+          </ul>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+{% endblock %}

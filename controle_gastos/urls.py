@@ -26,6 +26,7 @@ from contas.views import rolagens
 from contas.views import painel
 from contas.views import fundamentos
 from contas.views import mapaPETR
+from contas.views import mapaITUB
 from contas.views import index
 from contas.views import home1
 from contas.views import academia
@@ -57,6 +58,7 @@ urlpatterns = [
     path('academia/', views.academia, name='url_academia'),
 
     path('mapapetr4/', mapaPETR, name='url_mapapetr4'),
+    path('mapaitub4/', mapaITUB, name='url_mapaitub4'),
     path('dividendos/', dividendos, name='url_dividendos'),
     path('login/', login_user, name='url_login'),
     path('login/submit', submit_login, name='url_login'),
