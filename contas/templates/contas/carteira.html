@@ -1,0 +1,152 @@
+% extends 'contas/base1.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registre-se usar o sistema{% endblock %}
+
+{% block content %}
+
+<style>
+    .al {
+        text-align: left;
+
+
+    }
+
+    th,
+    td {
+
+        text-align: center;
+    }
+
+    p,
+    h6,
+    h2 {
+        text-align: justify;
+        padding: 20px;
+    }
+
+    table,
+    .container-fluid {
+        border: solid 1px;
+        padding: 20px;
+
+    }
+</style>
+
+
+<div class="container-fluid">
+    <h2>Carteita de alocação diversificada</h2>
+    <p>Olá investidor, a bolsa em alta crescente é ótimo, mas é importante <br>ter um portifólio com certa proteção.
+        Neste momento de expectativa <br>alta na inflaçao no curto prazo, uma alocação nesta área é saudável. </p>
+    <div class="row">
+        <div class="col-sm-5">
+            <h4>Carteira Total</h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="al">Alocação</th>
+                        <th>Conservador</th>
+                        <th>Moderado</th>
+                        <th>Agressivo</th>
+                        <th>Onde alocar?</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="al">Caixa</td>
+                        <td>10%</td>
+                        <td>5%</td>
+                        <td>5%</td>
+                        <td>TD SELIC</td>
+
+                    </tr>
+                    <tr>
+                        <td class="al">Renda Fixa</td>
+                        <td>25%</td>
+                        <td>20%</td>
+                        <td>10%</td>
+                        <td>Cesta RF</td>
+
+                    </tr>
+                    <tr>
+                        <td class="al">Bolsa</td>
+                        <td>27,50%</td>
+                        <td>40%</td>
+                        <td>52,40%</td>
+                        <td>BOVA11</td>
+
+                    </tr>
+                    <tr>
+                        <td class="al">Dólar</td>
+                        <td>5%</td>
+                        <td>5%</td>
+                        <td>5%</td>
+                        <td>Votorantim Cambial</td>
+
+                    </tr>
+                    <tr>
+                        <td class="al">Inflação</td>
+                        <td>32,50%</td>
+                        <td>30%</td>
+                        <td>27,50%</td>
+                        <td>Icatu Inflacao curto</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <h6>Investimento em inflação curto prazo</h6>
+            <p> Em meus estudos, o fundo cambial focado em gestão cambial e com menor taxa de administração, trata-se do
+                fundo do BV Cambial, com gráfico de rentabilidade a seguir.</p>
+            <img src="/Users/eduardobarros/OneDrive/Trade_Edu/Projeto_django/Icatu.png"><br>
+            <h6>Exposição em moeda forte</h6>
+
+            <p> Seguindo com a mesma lógica anterior, foco na proteção do patrimonio é crucial. Uma forma de se proteger
+                é estar em parte comprado em dólar (alocação menor), 5% do capital aplicado em moeda forte vai trazer
+                mais tranquilidade em momentos e grande volatilidade.</p>
+            <img src="/Users/eduardobarros/OneDrive/Trade_Edu/Projeto_django/BV_Cambial.png">
+
+        </div>
+        <div class="col-sm-3">
+            <table class="table table-striped">
+                <h4>Cesta de ativos Renda Fixa</h4>
+                <thead>
+                    <tr>
+                        <th class="al">Tipo</th>
+                        <th>Vencimento</th>
+                        <th>Peso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="al">Tesouro Pré</td>
+                        <td>2023</td>
+                        <td>27%</td>
+                    <tr>
+                        <td class="al">Tesouro IPCA</td>
+                        <td>2026</td>
+                        <td>12,5%</td>
+                    </tr>
+                    <tr>
+                        <td class="al">Tesouro IPCA</td>
+                        <td>2035</td>
+                        <td>16,5%</td>
+                    </tr>
+                    <tr>
+                        <td class="al">Tesouro SELIC</td>
+                        <td>2025</td>
+                        <td>44%</td>
+                    </tr>
+                    </tr>
+                </tbody>
+        </div>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

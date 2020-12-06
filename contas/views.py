@@ -298,3 +298,8 @@ def dividendos(request):
 
 
     return render(request, 'contas/dividendos.html', data)
+
+@login_required(login_url='/login/')
+def carteira(request):
+    data = {}
+    return render(request, 'contas/carteira.html', data)
