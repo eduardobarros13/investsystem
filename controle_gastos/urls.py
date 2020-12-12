@@ -19,7 +19,7 @@ from contas.views import home1
 from contas.views import academia
 from contas.views import dividendos
 from contas.views import carteira
-
+from contas.views import diarioTrader
 from contas.views import login_user
 from contas.views import submit_login
 from contas.views import logado
@@ -42,9 +42,14 @@ urlpatterns = [
     path('posicaobbdc4/', posicaoBBDC, name='url_posicaobbdc4'),
     path('posicaopetr4/', posicaoPETR, name='url_posicaopetr4'),
     path('carteira/', carteira, name='url_carteira'),
+    path('diario',diarioTrader, name='diario'),
+    path('diario/<int:id>',views.diarioTraderView, name='diario-view'),
 
     path('index/', index, name='url_index'),
     path('home1/', home1, name='url_home1'),
+    path('', home1, name='url_home1'),
+
+
     path('academia/', views.academia, name='url_academia'),
 
     path('mapapetr4/', mapaPETR, name='url_mapapetr4'),

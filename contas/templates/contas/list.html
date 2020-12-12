@@ -1,0 +1,30 @@
+{%extends 'contas/base.html'%}
+
+{%block title%}Lista de Tarefas{%endblock%}
+
+
+
+{%block content%}
+
+<div class="offset-1 col-10 list-div">
+    <h1>Diario de Trader</h1>
+    <div class="col-2 add-div">
+        <i class="fas fa-plus "></i> Adicionar Trade
+    </div>
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite para buscar">
+        <i class="fas fa-search"></i>
+    </div>
+    <ul class="task-list">
+        {% for trades in dados %}
+        <li class="task-item">
+            <span><a href="/diario/{{trades.id}}">{{trades.title}}</a></span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><i class="fas fa-edit"></i></span>
+        </li>
+        {%endfor%}
+    </ul>
+
+</div>
+
+{%endblock%}

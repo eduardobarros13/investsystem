@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 import datetime
 import yfinance
@@ -12,6 +12,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import sqlite3
+
+from .models import Trade
 
 ###############Criando telas de logins###################
 #@academia_required(login_url='/login/')
@@ -308,3 +310,12 @@ def dividendos(request):
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
+
+def diarioTrader(request):
+    dados = Trade.objects.all()
+
+    return render(request, 'contas/list.html', {'dados': dados})
+
+def diarioTraderView(request, id):
+    dados = get_object_or_404(Trade, pk=id)
+    return render(request, 'contas/task.html', {'dados':dados})
