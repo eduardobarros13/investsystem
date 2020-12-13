@@ -56,8 +56,8 @@ urlpatterns = [
     path('newTrade/',views.newTrade, name='newTrade'),
     path('edit/<int:id>',views.editTrade, name='edittrade'),
     path('changestatus/<int:id>',views.changestatus, name='changestatus'),
-
     path('delete/<int:id>',views.deleteTrade, name='delete-trade'),
+    path('yourname/<str:name>', views.yourName, name='your-name'),
 
     ###Criando paginas de login###
     path('login/', login_user, name='url_login'),
