@@ -316,6 +316,9 @@ def carteira(request):
 def diarioTrader(request):
     search = request.GET.get('search')
     filter = request.GET.get('filter')
+    #tradesDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
+    tradesDone = Trade.objects.filter(done='done', user=request.user).count()
+    tradesDoing = Trade.objects.filter(done='doing', user=request.user).count()
 
     if search:
         dados = Trade.objects.filter(title__icontains=search, user=request.user)
@@ -329,7 +332,7 @@ def diarioTrader(request):
 @login_required
 def diarioTraderView(request, id):
     dados = get_object_or_404(Trade, pk=id)
-    return render(request, 'contas/task.html', {'dados':dados})
+    return render(request, 'contas/task.html', {'dados':dados ,'tradesrecently': tradesDoneRecently, 'tradesdone': tradesDone, 'tradesdoing': tradesDoing })
 
 @login_required
 def newTrade(request):
@@ -372,4 +375,17 @@ def deleteTrade(request, id):
 
     messages.info(request, 'Trade deletado com sucesso')
     return redirect('diario')
+
+@login_required
+def changestatus(request, id):
+    trade = get_object_or_404(Trade, pk=id)
+
+    if (trade.done == 'doing'):
+        trade.done = 'done'
+    else:
+        trade.done = 'doing'
+    trade.save()
+    return redirect('/diario')
+        
+
 
