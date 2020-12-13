@@ -246,7 +246,7 @@ def posicaoBBDC(request):
 
     return render(request, 'contas/posicaobbdc4.html', data)
 
-@login_required(login_url='/login/')
+@login_required
 def mapaPETR(request):
     data = {}
     mapaPETR = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Projeto_django/Robo_PUT_PETR4.xlsx",header=0)
@@ -262,7 +262,7 @@ def mapaPETR(request):
     data['Negocios'] = mapaPETR['Negocios']
     return render(request, 'contas/mapapetr4.html', data)
 
-@login_required(login_url='/login/')
+@login_required
 def mapaITUB(request):
     data = {}
     mapaITUB = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Projeto_django/Robo_PUT_ITUB4.xlsx",header=0)
@@ -278,7 +278,7 @@ def mapaITUB(request):
     data['Negocios'] = mapaITUB['Negocios']
     return render(request, 'contas/mapaitub4.html', data)
 
-@login_required(login_url='/login/')
+@login_required
 def index(request):
     data = {}
     return render(request, 'contas/index.html', data)
@@ -292,7 +292,7 @@ def home1(request):
 
     return render(request, 'contas/home1.html', data)
 
-@login_required(login_url='/login/')
+@login_required
 def dividendos(request):
     data = {}
 
@@ -307,7 +307,7 @@ def dividendos(request):
 
     return render(request, 'contas/dividendos.html', data)
 
-@login_required(login_url='/login/')
+@login_required
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
@@ -316,9 +316,9 @@ def carteira(request):
 def diarioTrader(request):
     search = request.GET.get('search')
     filter = request.GET.get('filter')
-    #tradesDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
-    #tradesDone = Trade.objects.filter(done='done', user=request.user).count()
-    #tradesDoing = Trade.objects.filter(done='doing', user=request.user).count()
+    #dadosDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
+    dadosDone = Trade.objects.filter(done='done', user=request.user).count()
+    dadosDoing = Trade.objects.filter(done='doing', user=request.user).count()
 
     if search:
         dados = Trade.objects.filter(title__icontains=search, user=request.user)
@@ -327,7 +327,9 @@ def diarioTrader(request):
     else:
         dados = Trade.objects.all().order_by('-created_at').filter(user=request.user)
 
-    return render(request, 'contas/list.html', {'dados': dados})
+    return render(request, 'contas/list.html', {'dados': dados, 'dadosdone': dadosDone, 'dadosdoing': dadosDoing })
+
+
 
 @login_required
 def diarioTraderView(request, id):
@@ -340,7 +342,7 @@ def newTrade(request):
         form = TradeForm(request.POST)
 
         if form.is_valid():
-            trade = form.save(commit=False)
+            trade = form.save(commit=True)
             trade.done = 'doing'
             trade.user = request.user
             trade.save()
@@ -361,6 +363,7 @@ def editTrade(request, id):
         form = TradeForm(request.POST, instance=trade)
 
         if (form.is_valid()):
+            
             trade.save()
             return redirect('diario')
         else:
@@ -371,6 +374,7 @@ def editTrade(request, id):
 @login_required
 def deleteTrade(request, id):
     trade = get_object_or_404(Trade, pk=id)
+    
     trade.delete()
 
     messages.info(request, 'Trade deletado com sucesso')
