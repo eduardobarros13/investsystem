@@ -11,13 +11,13 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 import sqlite3
 
 from .models import Trade
 from .forms import TradeForm
 
 ###############Criando telas de logins###################
-#@academia_required(login_url='/login/')
 
 @login_required(login_url='/login/')
 def academia(request):
@@ -311,16 +311,27 @@ def dividendos(request):
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
-
+    
+@login_required
 def diarioTrader(request):
-    dados = Trade.objects.all().order_by('-created_at')
+    search = request.GET.get('search')
+    filter = request.GET.get('filter')
+
+    if search:
+        dados = Trade.objects.filter(title__icontains=search, user=request.user)
+    elif filter:
+        dados = Trade.objects.filter(done=filter, user=request.user)
+    else:
+        dados = Trade.objects.all().order_by('-created_at').filter(user=request.user)
 
     return render(request, 'contas/list.html', {'dados': dados})
 
+@login_required
 def diarioTraderView(request, id):
     dados = get_object_or_404(Trade, pk=id)
     return render(request, 'contas/task.html', {'dados':dados})
 
+@login_required
 def newTrade(request):
     if request.method == 'POST':
         form = TradeForm(request.POST)
@@ -328,6 +339,7 @@ def newTrade(request):
         if form.is_valid():
             trade = form.save(commit=False)
             trade.done = 'doing'
+            trade.user = request.user
             trade.save()
             return redirect('/diario')
 
@@ -338,7 +350,7 @@ def newTrade(request):
     form = TradeForm()
     return render(request, 'contas/addtrade.html', {'form': form})
     
-
+@login_required
 def editTrade(request, id):
     trade = get_object_or_404(Trade, pk=id)
     form = TradeForm(instance = trade)
@@ -350,8 +362,14 @@ def editTrade(request, id):
             return redirect('diario')
         else:
             return render(request, 'contas/edittrade.html', {'form':form, 'trade':trade})
-
-
-
     else:
         return render(request, 'contas/edittrade.html', {'form':form, 'trade':trade})
+
+@login_required
+def deleteTrade(request, id):
+    trade = get_object_or_404(Trade, pk=id)
+    trade.delete()
+
+    messages.info(request, 'Trade deletado com sucesso')
+    return redirect('diario')
+
