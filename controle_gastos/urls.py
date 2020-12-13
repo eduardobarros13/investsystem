@@ -42,23 +42,24 @@ urlpatterns = [
     path('posicaobbdc4/', posicaoBBDC, name='url_posicaobbdc4'),
     path('posicaopetr4/', posicaoPETR, name='url_posicaopetr4'),
     path('carteira/', carteira, name='url_carteira'),
-    path('diario',diarioTrader, name='diario'),
-    path('diario/<int:id>',views.diarioTraderView, name='diario-view'),
-
     path('index/', index, name='url_index'),
     path('home1/', home1, name='url_home1'),
     path('', home1, name='url_home1'),
-
-
     path('academia/', views.academia, name='url_academia'),
-
     path('mapapetr4/', mapaPETR, name='url_mapapetr4'),
     path('mapaitub4/', mapaITUB, name='url_mapaitub4'),
     path('dividendos/', dividendos, name='url_dividendos'),
+
+    ###Criando banco do usuario###
+    path('diario',diarioTrader, name='diario'),
+    path('diario/<int:id>',views.diarioTraderView, name='diario-view'),
+    path('newTrade/',views.newTrade, name='newTrade'),
+    path('edit/<int:id>',views.editTrade, name='edittrade'),
+
+    ###Criando paginas de login###
     path('login/', login_user, name='url_login'),
     path('login/submit', submit_login, name='url_login'),
     path('logout/', logout_user),
-   
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/submit', submit_login, name='url_login'),
