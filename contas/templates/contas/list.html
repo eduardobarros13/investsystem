@@ -11,19 +11,17 @@
 
     <div class="container dashboard">
         <div class="col-4 dashboard-box" id="dashboard-lastdays">
-            <h4>Trades encerrados nos ultimos 30 dias</h4>
-            <span>0</span>
+            <h4>Finalizadas nos últimos 30 dias</h4>
+            <span>{{ traderecently }}</span>
         </div>
         <div class="col-4 dashboard-box" id="dashboard-done">
-            <h4>Trades encerrados</h4>
-            <span>{{dadosDone}}</span>
-        </div>
-        <div class="col-4 dashboard-box" id="dashboard-doing">
-            <h4>Trades em operacao</h4>
+            <h4>{{ tradedone }}</h4>
             <span>0</span>
         </div>
-
-
+        <div class="col-4 dashboard-box" id="dashboard-doing">
+            <h4>{{ tradedoing }}</h4>
+            <span>0</span>
+        </div>
     </div>
     <a id="add-link" href="newTrade/">
         <div class="col-2 add-div">
@@ -37,7 +35,7 @@
             <i class="fas fa-search" id="search-btn"></i>
         </form>
     </div>
-    <!--
+
     <div class="col-12 filter-div">
         <span>Filtrar por:</span>
         <select name="filter" id="filter" class="form-control">
@@ -45,27 +43,26 @@
             <option value="done">Trade encerrado</option>
             <option value="doing">Trade em operacao</option>
         </select>
-    </div>-->
+    </div>
     {% if messages %}
     <ul class="messages">
         {%for message in messages %}
         <li {%if message.tags%} class="alert alert-{{message.tags}}" {%endif%}>{{message}}</li>
         {%endfor%}
-
     </ul>
-
     {% endif %}
+
     <ul class="task-list">
-        {% for trades in dados %}
+        {% for trades in trade %}
         {% if trades.done == 'doing'%}
         <li class="task-item">
             {%else%}
         <li class="task-item done">
             {%endif%}
-            <span><a href="/diario/{{trades.id}}">{{trades.title}}</a></span>
-            <a href="delete/{{trades.id}}"><span><i class="fas fa-trash"></i></span></a>
-            <a href="edit/{{trades.id}}"><span><i class="fas fa-edit"></i></span></a>
-            <a href="changestatus/{{trades.id}}"><span><i class="fas fa-check"></i></span></a>
+                <span><a href="/diario/{{trades.id}}">{{trades.title}}</a></span>
+                <a href="delete/{{trades.id}}"><span><i class="fas fa-trash"></i></span></a>
+                <a href="edit/{{trades.id}}"><span><i class="fas fa-edit"></i></span></a>
+                <a href="changestatus/{{trades.id}}"><span><i class="fas fa-check"></i></span></a>
 
         </li>
         {%endfor%}

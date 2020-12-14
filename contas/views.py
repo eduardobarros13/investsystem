@@ -312,37 +312,40 @@ def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
     
+
+##criando area de usuario##
 @login_required
 def diarioTrader(request):
     search = request.GET.get('search')
     filter = request.GET.get('filter')
-    #dadosDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
-    dadosDone = Trade.objects.filter(done='done', user=request.user).count()
-    dadosDoing = Trade.objects.filter(done='doing', user=request.user).count()
+    dadosDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
+    tradeDone = Trade.objects.filter(done='done', user=request.user).count()
+    tradeDoing = Trade.objects.filter(done='doing', user=request.user).count()
 
     if search:
-        dados = Trade.objects.filter(title__icontains=search, user=request.user)
+        trade = Trade.objects.filter(title__icontains=search, user=request.user)
     elif filter:
-        dados = Trade.objects.filter(done=filter, user=request.user)
+        trade = Trade.objects.filter(done=filter, user=request.user)
     else:
-        dados = Trade.objects.all().order_by('-created_at').filter(user=request.user)
+        trade = Trade.objects.all().order_by('-created_at').filter(user=request.user)
 
-    return render(request, 'contas/list.html', {'dados': dados, 'dadosdone': dadosDone, 'dadosdoing': dadosDoing })
+    return render(request, 'contas/list.html', {'trade': trade, 'tradedone': tradeDone, 'tradedoing': tradeDoing })
 
 
 
 @login_required
 def diarioTraderView(request, id):
-    dados = get_object_or_404(Trade, pk=id)
-    return render(request, 'contas/task.html', {'dados':dados})
+    trade = get_object_or_404(Trade, pk=id)
+    return render(request, 'contas/task.html', {'trade':trade})
 
 @login_required
 def newTrade(request):
+
     if request.method == 'POST':
         form = TradeForm(request.POST)
 
         if form.is_valid():
-            trade = form.save(commit=True)
+            trade = form.save(commit=False)
             trade.done = 'doing'
             trade.user = request.user
             trade.save()

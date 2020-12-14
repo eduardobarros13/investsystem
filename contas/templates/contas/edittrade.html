@@ -8,7 +8,7 @@
 {%block content%}
 
 <div class="offset-1 col-10 list-div">
-    <h3>Editar '{{trades.title}}'</h3>
+    <h3>Editar {{trade.title}}</h3>
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}
