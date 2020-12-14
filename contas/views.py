@@ -318,7 +318,6 @@ def carteira(request):
 def diarioTrader(request):
     search = request.GET.get('search')
     filter = request.GET.get('filter')
-    dadosDoneRecently = Trade.objects.filter(done='done', updated_at__gt=datetime.datetime.now()-datetime.timedelta(days=30)).count()
     tradeDone = Trade.objects.filter(done='done', user=request.user).count()
     tradeDoing = Trade.objects.filter(done='doing', user=request.user).count()
 
@@ -329,7 +328,7 @@ def diarioTrader(request):
     else:
         trade = Trade.objects.all().order_by('-created_at').filter(user=request.user)
 
-    return render(request, 'contas/list.html', {'trade': trade, 'tradedone': tradeDone, 'tradedoing': tradeDoing })
+    return render(request, 'contas/list.html', {'trade': trade,'tradedone': tradeDone, 'tradedoing': tradeDoing })
 
 
 
