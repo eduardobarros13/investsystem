@@ -22,6 +22,11 @@
     top: 10px;
   }
 
+  .news {
+    right: 10px;
+    top: 10px;
+  }
+
   .container {
     right: 0;
     top: 10px;
@@ -71,10 +76,9 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-4">
-        <h3></h3>
-        <p>
-          <!-- TradingView Widget BEGIN -->
+      <div class="col-sm-7">
+        <P>
+        <!-- TradingView Widget BEGIN -->
         <div class="home-responsivo">
           <div class="tradingview-widget-container">
             <div id="tradingview_54784"></div>
@@ -100,8 +104,7 @@
               );
             </script>
           </div>
-          <p>
-            <!-- TradingView Widget BEGIN -->
+          <!-- TradingView Widget BEGIN -->
           <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/markets/" rel="noopener"
@@ -238,10 +241,19 @@
         </div>
         <!-- TradingView Widget END -->
       </div>
+      <div class="col-sm-4">
+          <div class="news" style="text-align: justify;">
+            <h3 style="text-align: center;">Notícias Brasil</h3>
+            <p>
+              {%for news in Manchete%}
+            <ul>{{news}}</ul>
+            {%endfor%}
+            </p>
+          </div>
+      </div>
     </div>
   </div>
 </div>
-
 
 
 {% endblock %}

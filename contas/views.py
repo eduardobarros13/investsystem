@@ -286,9 +286,9 @@ def index(request):
 def home1(request):
     data = {}
 
-    broad = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/BD_noticias.xlsx',sheet_name='broad',header=0)
-
-    data['news'] = broad['Manchete']
+    connection = sqlite3.connect('noticias.db')
+    noticiasValor = pd.read_sql('select * from noticias', connection)
+    data['Manchete'] = noticiasValor['Manchetes Valor']
 
     return render(request, 'contas/home1.html', data)
 
