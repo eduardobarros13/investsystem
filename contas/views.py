@@ -86,18 +86,19 @@ def put(request):
 def news(request):
     data={}
     
-    #news = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/news.xlsx',header=0)
-    #data['date'] = news['Date']
-    #data['Score'] = news['compound_vader_score']
-    #data['Manchete'] = news['title']
+    news = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/BD_noticias.xlsx',header=0, sheet_name='broad')
+    cnbc = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/BD_noticias.xlsx',header=0, sheet_name='cnbc')
 
-    connection = sqlite3.connect('noticias.db')
-    noticiasValor = pd.read_sql('select * from noticias', connection)
-    data['Manchete'] = noticiasValor['Manchetes Valor']
+    data['Manchete'] = news['Manchete']
+    data['MancheteCNBC'] = cnbc['Manchete']
 
-    connection = sqlite3.connect('noticiasCNBC.db')
-    noticiasCNBC = pd.read_sql('select * from noticiasCNBC', connection)
-    data['MancheteCNBC'] = noticiasCNBC['Manchetes CNBC']
+    #connection = sqlite3.connect('noticias.db')
+    #noticiasValor = pd.read_sql('select * from noticias', connection)
+    #data['Manchete'] = noticiasValor['Manchetes Valor']
+
+    #connection = sqlite3.connect('noticiasCNBC.db')
+    #noticiasCNBC = pd.read_sql('select * from noticiasCNBC', connection)
+    #data['MancheteCNBC'] = noticiasCNBC['Manchetes CNBC']
 
 
     return render(request, 'contas/news.html', data)
