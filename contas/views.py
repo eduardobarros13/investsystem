@@ -249,7 +249,7 @@ def posicaoBBDC(request):
 @login_required
 def mapaPETR(request):
     data = {}
-    mapaPETR = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Projeto_django/Robo_PUT_PETR4.xlsx",header=0)
+    mapaPETR = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/Mapeamento_PUT_PETR4.xlsx",header=0)
 
     data['STRIKE'] = mapaPETR['STRIKE']
     data['ATIVO'] = mapaPETR['ATIVO']
@@ -264,8 +264,9 @@ def mapaPETR(request):
 
 @login_required
 def mapaITUB(request):
+
     data = {}
-    mapaITUB = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Projeto_django/Robo_PUT_ITUB4.xlsx",header=0)
+    mapaITUB = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/Mapeamento_PUT_ITUB4.xlsx",header=0)
 
     data['STRIKE'] = mapaITUB['STRIKE']
     data['ATIVO'] = mapaITUB['ATIVO']
@@ -277,6 +278,22 @@ def mapaITUB(request):
     data['ProbExerc'] = mapaITUB['Prob. Exec.']
     data['Negocios'] = mapaITUB['Negocios']
     return render(request, 'contas/mapaitub4.html', data)
+
+@login_required
+def mapaBBDC(request):
+    data = {}
+    mapa = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/Mapeamento_PUT_BBDC4.xlsx",header=0)
+
+    data['STRIKE'] = mapa['STRIKE']
+    data['ATIVO'] = mapa['ATIVO']
+    data['VENCIMENTO'] = mapa['VENC.']
+    data['SINAL'] = mapa['Robo PUT']
+    data['COTACAO'] = mapa['Real Time']
+    data['Tretorno'] = round(mapa['TIR (%)']*100,4)
+    data['PROTECAO'] = round(mapa['Strike VS Cot. (%)']*100,2)
+    data['ProbExerc'] = mapa['Prob. Exec.']
+    data['Negocios'] = mapa['Negocios']
+    return render(request, 'contas/mapabbdc4.html', data)
 
 @login_required
 def index(request):
@@ -298,13 +315,11 @@ def dividendos(request):
 
     tabela = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/dividendos.xlsx')
 
-    data['Empresa'] = tabela['Empresa']
+    data['Empresa'] = list(tabela['Empresa'])
     data['Tipo'] = tabela['Tipo']
     data['DataEx'] = tabela['DataEx']
     data['PrevPag'] = tabela['PrevPag']
-    data['Valor'] = tabela['Valor']
-
-
+    data['Valor'] = list(tabela['Valor'])
     return render(request, 'contas/dividendos.html', data)
 
 @login_required
