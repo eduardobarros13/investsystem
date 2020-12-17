@@ -47,12 +47,12 @@
       <tr>
           <th>Código CALL</th>
           <th>Strike</th>
-          <th>Descobertas</th>
+          <th>Descobertas<br><p style="font-size: 10px;">(Em milhoes)</p></th>
           <th>Titulares</th>
           <th>Lançadores</th>
           <th>Código PUT</th>
           <th>Strike</th>
-          <th>Descobertas</th>
+          <th>Descobertas<br><p style="font-size: 10px;">(Em milhoes)</p></th>
           <th>Titulares</th>
           <th>Lançadores</th>
       </tr>
@@ -77,9 +77,9 @@
           <ul>
             {%for descoberta in descoberta%}
               {%if descoberta > 5%}
-            <ul style="color: red"><b>{{descoberta}} MM</b></ul>
+            <ul style="color: red"><b>{{descoberta}}</b></ul>
               {%else%}
-              <ul>{{descoberta}} MM</ul>
+              <ul>{{descoberta}}</ul>
               {%endif%}
             {%endfor%}
           </ul>
@@ -116,9 +116,9 @@
           <ul>
             {%for descoberta in descobertaP%}
               {%if descoberta > 4%}
-            <ul style="color: red"><b>{{descoberta}} MM</b></ul>
+            <ul style="color: red"><b>{{descoberta}}</b></ul>
               {%else%}
-              <ul>{{descoberta}} MM</ul>
+              <ul>{{descoberta}}</ul>
               {%endif%}
             {%endfor%}
           </ul>

@@ -304,9 +304,8 @@ def index(request):
 def home1(request):
     data = {}
 
-    connection = sqlite3.connect('noticias.db')
-    noticiasValor = pd.read_sql('select * from noticias', connection)
-    data['Manchete'] = noticiasValor['Manchetes Valor']
+    news = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/BD_noticias.xlsx',header=0, sheet_name='broad')
+    data['Manchete'] = news['Manchete']
 
     return render(request, 'contas/home1.html', data)
 
@@ -321,6 +320,7 @@ def dividendos(request):
     data['DataEx'] = tabela['DataEx']
     data['PrevPag'] = tabela['PrevPag']
     data['Valor'] = list(tabela['Valor'])
+    data['Valor2'] = list(tabela['Valor2'])
     return render(request, 'contas/dividendos.html', data)
 
 @login_required
