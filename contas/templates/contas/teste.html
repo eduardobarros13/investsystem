@@ -1,99 +1,147 @@
 {% extends 'contas/base1.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Registre-se usar o sistema{% endblock %}
+{% block title %}Planos e custos{% endblock %}
 
 {% block content %}
 
 <style>
-    ul {
-        color: black;
-        font-family: verdana;
-        font-size: 85%;
-        text-align: right;
+    .dashboard {
+        padding: 0;
+        width: 100%;
+        display: block;
+        align-items: center;
+        margin: auto;
     }
 
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
+    .dashboard h4 {
+        font-size: 20px;
     }
 
+    .dashboard span {
+        font-size: 40px;
+        display: block;
+        width: 100%;
+    }
 
-    th,
-    td {
-        padding: 1px;
+    .dashboard-box {
+        float: left;
+        background-color: #DFDFDF;
+        color: #FFF;
+        padding: 20px;
+        box-sizing: border-box;
+        height: 100%;
+        width: 600px;
         text-align: center;
     }
 
-    tbody {
-        font-size: 85%;
-        letter-spacing: 1px padding: 1px;
-        text-align: center;
+    .dashboard-box:nth-child(2) {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
     }
 
-    thead {
+    #green {
+        background-color: #A9A9A9;
+    }
 
-        td {
-            text-align: center;
-            1px solid black;
-        }
+    p {
+        text-align: justify;
+        font-size: 20px;
+    }
+
+    table {
+
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #paypal-button-container {
+        margin-top: 30%;
+    }
 </style>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-l-4">
-            <div class="table-responsive">
-                <table class="table">
-                    <caption>InvestSystem</caption>
-                    <thead>
-                        <tr>
-                            <th>Empresa</th>
-                            <th>DataEx</th>
-                            <th>PrevPag</th>
-                            <th>Valor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ul>{% for empresa in Empresa%}
-                                    <ul>{{empresa}}</ul>
-                                    {%endfor%}
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>{% for DataEx in DataEx%}
-                                    <ul>{{DataEx}}</ul>
-                                    {%endfor%}
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>{% for PrevPag in PrevPag%}
-                                    <ul>{{PrevPag}}</ul>
-                                    {%endfor%}
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>{% for Valor in Valor%}
-                                    <ul>{{Valor}}</ul>
-                                    {%endfor%}
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-<div class="row">
-    <div class="col-lg-12">
-        <p>
-            teste de grafico
-        </p>
-    </div>
+<meta http-equiv="Content-Language" content="pt-br">
 
-</div>
+<div class="offset-1 col-10 list-div">
+    <h3>Diario de Trader</h3>
+
+    <div class="container dashboard">
+        <div class="col-4 dashboard-box" id="green">
+            <h4>Plano green</h4>
+            <span>
+                <p>O recurso assinar e a melhor maneira de deixar voce atualizado sobre nossos robos e analises.</p>
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <th style="text-align: left;">Planos</th>
+                            <th>Estrategias</th>
+                            <th>Treinamentos</th>
+                            <th>Grupo exclusivo</th>
+                            <th>Assessoria</th>
+                            <th>Assessoria exclusiva</th>
+                            <th>Valores/Mes</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;">Green</td>
+                                <td><span><i class="fas fa-check"></i></span></td>
+                                <td>Nao</td>
+                                <td>Nao</td>
+                                <td>Nao</td>
+                                <td>Nao</td>
+                                <td>R$ 30,00</td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">Premium</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Nao</td>
+                                <td>R$ 50,00</td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;">Blue</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>Sim</td>
+                                <td>R$ 450,00</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div id="paypal-button-container"></div>
+                    <script
+                        src="https://www.paypal.com/sdk/js?client-id=AflWb9Tkeciod7PFAUnKlx52Fwv3396-cNfJBfeOwwnyaXwjYW1fX_YIqwobU2CXaXuPFyYqgESpyXwZ&vault=true&intent=subscription"
+                        data-sdk-integration-source="button-factory"></script>
+                    <script>
+                        paypal.Buttons({
+                            style: {
+                                shape: 'rect',
+                                color: 'silver',
+                                layout: 'vertical',
+                                label: 'subscribe'
+                            },
+                            createSubscription: function (data, actions) {
+                                return actions.subscription.create({
+                                    'plan_id': 'P-32A91918LF140972JL6QKQFI'
+                                });
+                            },
+                            onApprove: function (data, actions) {
+                                alert(data.subscriptionID);
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+                </div>
+            </span>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
