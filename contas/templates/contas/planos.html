@@ -31,22 +31,19 @@
         padding: 20px;
         box-sizing: border-box;
         height: 100%;
-        width: 600px;
+        width: 700px;
         text-align: center;
     }
 
     .dashboard-box:nth-child(2) {
         margin-left: 1.5%;
         margin-right: 1.5%;
+        height: 100%;
+        width: 700px;
     }
 
     #green {
         background-color: #A9A9A9;
-    }
-
-    p {
-        text-align: justify;
-        font-size: 20px;
     }
 
     table {
@@ -62,13 +59,13 @@
 <meta http-equiv="Content-Language" content="pt-br">
 
 <div class="offset-1 col-10 list-div">
-    <h3>Diario de Trader</h3>
+    <h3>Planos operacionais</h3>
 
     <div class="container dashboard">
-        <div class="col-4 dashboard-box" id="green">
-            <h4>Plano green</h4>
+        <div class="col-10 dashboard-box" id="green">
+            <h4>Conheca nossos planos</h4>
             <span>
-                <p>O recurso assinar e a melhor maneira de deixar voce atualizado sobre nossos robos e analises.</p>
+                
                 <div class="container">
                     <table class="table">
                         <thead>
@@ -76,18 +73,18 @@
                             <th>Estrategias</th>
                             <th>Treinamentos</th>
                             <th>Grupo exclusivo</th>
-                            <th>Assessoria</th>
+                            
                             <th>Assessoria exclusiva</th>
                             <th>Valores/Mes</th>
                         </thead>
                         <tbody>
                             <tr>
                                 <td style="text-align: left;">Green</td>
-                                <td><span><i class="fas fa-check"></i></span></td>
+                                <td>Sim</td>
                                 <td>Nao</td>
                                 <td>Nao</td>
                                 <td>Nao</td>
-                                <td>Nao</td>
+                            
                                 <td>R$ 30,00</td>
 
                             </tr>
@@ -97,7 +94,7 @@
                                 <td>Sim</td>
                                 <td>Sim</td>
                                 <td>Sim</td>
-                                <td>Nao</td>
+                         
                                 <td>R$ 50,00</td>
 
                             </tr>
@@ -106,7 +103,7 @@
                                 <td>Sim</td>
                                 <td>Sim</td>
                                 <td>Sim</td>
-                                <td>Sim</td>
+                            
                                 <td>Sim</td>
                                 <td>R$ 450,00</td>
 
@@ -115,6 +112,7 @@
                     </table>
                 </div>
                 <div>
+                    <p style="text-align: center; font-size: 20px;">O recurso assinar e a melhor maneira de deixar voce atualizado sobre nossos robos e analises.</p>
                     <div id="paypal-button-container"></div>
                     <script
                         src="https://www.paypal.com/sdk/js?client-id=AflWb9Tkeciod7PFAUnKlx52Fwv3396-cNfJBfeOwwnyaXwjYW1fX_YIqwobU2CXaXuPFyYqgESpyXwZ&vault=true&intent=subscription"

@@ -29,6 +29,10 @@ def logout_user(request):
     logout(request)
     return redirect('/login/')
 
+def planos(request):
+    data={}
+    return render(request,'contas/planos.html', data)
+
 
 def logado(request):
     return render (request, 'logado.html')
