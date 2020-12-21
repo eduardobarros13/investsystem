@@ -1,8 +1,8 @@
 from django.db import models
-
 from django.contrib.auth import get_user_model
 from uuid import uuid4
 import uuid
+import pandas as pd
 
 class Categoria(models.Model):
       #id = models.UUIDField( primary_key = False, default = uuid.uuid4().int, editable = False)
