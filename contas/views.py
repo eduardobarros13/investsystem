@@ -46,8 +46,9 @@ def login_user(request):
 def submit_login(request):
     if request.POST:
         username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(username = username, password=password)
+        user = authenticate(username = username, password=password, email=email)
         if user is not None:
             login(request, user)
             return redirect ('/home1/')
