@@ -329,6 +329,20 @@ def dividendos(request):
     return render(request, 'contas/dividendos.html', data)
 
 @login_required
+def teste(request):
+    data = {}
+    tabela = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/dividendos.xlsx')
+
+    data['Empresa'] = list(tabela['Empresa'])
+    data['Tipo'] = tabela['Tipo']
+    data['DataEx'] = tabela['DataEx']
+    data['PrevPag'] = tabela['PrevPag']
+    data['Valor'] = list(tabela['Valor'])
+    data['Valor2'] = list(tabela['Valor2'])
+
+    return render(request, 'contas/teste.html', data)
+
+@login_required
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)

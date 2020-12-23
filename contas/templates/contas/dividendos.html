@@ -57,12 +57,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
+                            <th>
                                 <ul>{% for empresa in Empresa%}
                                     <ul>{{empresa}}</ul>
                                     {%endfor%}
                                 </ul>
-                            </td>
+                            </th>
                             <td>
                                 <ul>{% for DataEx in DataEx%}
                                     <ul>{{DataEx}}</ul>
@@ -155,8 +155,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                {%for valor in Valor%}
-                {%endfor%}
                 <div id="container"></div>
             </div>
         </div>
@@ -167,37 +165,19 @@
                 type: 'column'
             },
             title: {
-                text: 'Grafico com melhores Dividendos'
+                text: 'Grafico de pagadores de dividendos'
             },
             subtitle: {
-                text: 'Vesao beta'
+                text: 'InvestSystem'
             },
             xAxis: {
-                categories: ['ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITUB ',
-                                'ITSA ',
-                                'ITUB ',
-                                'NEOE ',
-                                'BEES ',
-                                'ITUB ',
-                                'CAML ',
-                                'BBDC ',
-                                'CPLE ',
-                                'VIVT ',
-                                'VIVT '],
+                categories: [],
                 crosshair: true
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Receita (R$) / acao'
+                    text: 'DIV/JCP R$'
                 }
             },
             tooltip: {
@@ -210,38 +190,17 @@
             },
             plotOptions: {
                 column: {
-
                     pointPadding: 0.2,
                     borderWidth: 0
                 }
             },
             series: [{
-                name: 'Rentabilidade mensal',
-                showInLegend: false,
+                name: 'DIV/JCP',
                 colorByPoint: true,
-                data: [0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.015,
-                        0.02,
-                        0.015,
-                        0.22,
-                        0.021,
-                        0.015,
-                        0.054,
-                        0.378,
-                        2.818,
-                        0.711,
-                        0.154],
-
+                data: {{ Valor }}
+    
             }]
         });
-
     </script>
 <caption>InvestSystem</caption>
     {% endblock %}
