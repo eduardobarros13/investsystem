@@ -4,6 +4,6 @@ from .models import Transacao
 from .models import Trade
 
 
-#admin.site.register(Categoria)
-#admin.site.register(Transacao)
+admin.site.register(Categoria)
+admin.site.register(Transacao)
 admin.site.register(Trade)
