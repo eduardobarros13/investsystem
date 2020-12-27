@@ -61,31 +61,34 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def put(request):
-    while True:
-        data = {}
-        banco = pd.read_excel('InvestSystem3.0_django.xlsm',
-                                   sheet_name='Rastreador_PUT',header=8)
 
-        banco['Strike VS Cot. (%)'] = pd.to_numeric(banco['Strike VS Cot. (%)']*100, errors='coerce')
-        banco['TIR (%)'] = pd.to_numeric(banco['TIR (%)']*100, errors='coerce')
-        banco['VENC.'] = pd.to_datetime(banco['VENC.'], errors='coerce')
-        banco['VENC.'] = banco['VENC.'].dt.strftime("%d/%m/%Y")
+    data = {}
+    banco = pd.read_excel('InvestSystem3.0_django.xlsm',
+                            sheet_name='Rastreador_PUT',header=8)
 
-        banco['Strike VS Cot. (%)'] = round(banco['Strike VS Cot. (%)'], 2)
-        banco['TIR (%)'] = round(banco['TIR (%)'], 2)
+    banco['Strike VS Cot. (%)'] = pd.to_numeric(banco['Strike VS Cot. (%)']*100, errors='coerce')
+    banco['TIR (%)'] = pd.to_numeric(banco['TIR (%)']*100, errors='coerce')
+    banco['VENC.'] = pd.to_datetime(banco['VENC.'], errors='coerce')
+    banco['VENC.'] = banco['VENC.'].dt.strftime("%d/%m/%Y")
+    banco['Strike VS Cot. (%)'] = round(banco['Strike VS Cot. (%)'], 2)
+    banco['TIR (%)'] = round(banco['TIR (%)'], 2)
+    data['PUT'] = banco['STRIKE']       
+    data['ATIVO'] = banco['ATIVO']
+    data['PRECO'] = banco['Real Time']
+    data['RASTREADOR'] = banco['Robo PUT']
+    data['VENCIMENTO'] = banco['VENC.']
+    data['TIR'] = banco['TIR (%)']
+    data['PROTECAO'] = banco['Strike VS Cot. (%)']
+    data['Negocios'] = banco['Negocios']
 
-        data['PUT'] = banco['STRIKE']       
-        data['ATIVO'] = banco['ATIVO']
-        data['PRECO'] = banco['Real Time']
-        data['RASTREADOR'] = banco['Robo PUT']
-        data['VENCIMENTO'] = banco['VENC.']
+    data['VolImplicita'] = banco['Vol Implicita']
+    data['Delta'] = banco['Delta']
+    data['Theta'] = banco['Theta']
+    data['Gamma'] = banco['Gamma']
+    data['PJusto'] = banco['Pjusto']
 
-        data['TIR'] = banco['TIR (%)']
-        data['PROTECAO'] = banco['Strike VS Cot. (%)']
-        data['Negocios'] = banco['Negocios']
-
-        return render(request, 'contas/home.html', data)
-    time.sleep(6*5)
+    return render(request, 'contas/home.html', data)
+  
 
 @login_required(login_url='/login/')
 def news(request):
@@ -96,15 +99,6 @@ def news(request):
 
     data['Manchete'] = news['Manchete']
     data['MancheteCNBC'] = cnbc['Manchete']
-
-    #connection = sqlite3.connect('noticias.db')
-    #noticiasValor = pd.read_sql('select * from noticias', connection)
-    #data['Manchete'] = noticiasValor['Manchetes Valor']
-
-    #connection = sqlite3.connect('noticiasCNBC.db')
-    #noticiasCNBC = pd.read_sql('select * from noticiasCNBC', connection)
-    #data['MancheteCNBC'] = noticiasCNBC['Manchetes CNBC']
-
 
     return render(request, 'contas/news.html', data)
 
