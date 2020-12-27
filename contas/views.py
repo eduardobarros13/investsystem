@@ -329,32 +329,6 @@ def dividendos(request):
     return render(request, 'contas/dividendos.html', data)
 
 @login_required
-<<<<<<< HEAD
-def teste(request):
-    data = {}
-    posicaoBBAS = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Relatorio_InvestSystem.xlsx",sheet_name='Posicao_PETR4',header=0)
-
-    posicaoBBAS['Descobertas'] = round(posicaoBBAS['Descobertas'], 2)
-    posicaoBBAS['Descobertas.1'] = round(posicaoBBAS['Descobertas.1'], 2)
-
-    ###Coleta dados de Call##
-    data['codigo'] = list(posicaoBBAS['Código'])
-    data['strike'] = posicaoBBAS['Strike']
-    data['descoberta'] = list(posicaoBBAS['Descobertas'])
-    data['titulares'] = posicaoBBAS['Titulares']
-    data['lancadores'] = posicaoBBAS['Lançadores']
-    ###Coleta dados de Put##
-    data['codigoP'] = posicaoBBAS['Código.1']
-    data['strikeP'] = posicaoBBAS['Strike.1']
-    data['descobertaP'] = list(posicaoBBAS['Descobertas.1'])
-    data['titularesP'] = posicaoBBAS['Titulares.1']
-    data['lancadoresP'] = posicaoBBAS['Lançadores.1']
-
-    return render(request, 'contas/teste.html', data)
-
-@login_required
-=======
->>>>>>> parent of 99196487... Ajustes no grafico
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
