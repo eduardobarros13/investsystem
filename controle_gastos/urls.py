@@ -1,4 +1,5 @@
 from django.contrib import admin
+admin.autodiscover()
 from django.urls import path
 from contas.views import put
 from contas.views import news
