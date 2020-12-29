@@ -37,4 +37,8 @@ class Trade(models.Model):
       def __str__(self):
             return self.title
 
+class Evolucao(models.Model):
+      data = models.DateTimeField()
+      valor = models.DecimalField(max_digits=7, decimal_places=2)
+
 #Create your models here.

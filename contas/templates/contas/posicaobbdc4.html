@@ -1,3 +1,5 @@
+
+
 {% extends 'contas/base1.html' %}
 {% load crispy_forms_tags %}
 
@@ -6,146 +8,139 @@
 {% block content %}
 
 <style>
-  ul {
-    color: black;
-    font-family: verdana;
-    font-size: 82%;
-    text-align: right;
-  }
+    ul  {
+     color: black;
+     font-family: verdana;
+     font-size: 82%;
+     text-align: right;
+    }
 
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
 
 
-  th,
-  td {
-    padding: 1px;
-    text-align: center;
-  }
+    th, td {
+      padding: 1px;
+      text-align: center;
+    }
 
-  tbody {
-    font-size: 82%;
-    letter-spacing: 1px padding: 1px;
-    text-align: center;
-  }
+    tbody {
+      font-size: 82%;
+      letter-spacing: 1px
+      padding: 1px;
+      text-align: center;
+    }
+    thead {
 
-  thead {
-
-    td {
+    td{
       text-align: center;
       1px solid black;
     }
+
 </style>
 <div class="table-responsive">
-  <div class="row">
-    <div class="col-lg-12">
-      <table class="table">
-        <h5>Posição Players BBDC4 - Banco Bradesco S/A</h5>
-        <caption>InvestSystem</caption>
-        <thead>
-          <tr>
+  <table class="table">
+     <h5>Posição Players BBDC4 - Banco Bradesco S/A</h5>
+     <caption>InvestSystem</caption>
+      <thead>
+        <tr>
             <th>Código CALL</th>
             <th>Strike</th>
-            <th>Descobertas<p style="font-size: 10px;">(Em milhoes)</p>
-            </th>
+            <th>Descobertas</th>
             <th>Titulares</th>
             <th>Lançadores</th>
             <th>Código PUT</th>
             <th>Strike</th>
-            <th>Descobertas<p style="font-size: 10px;">(Em milhoes)</p>
-            </th>
+            <th>Descobertas</th>
             <th>Titulares</th>
             <th>Lançadores</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <ul>
-                {%for codigo in codigo%}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              {%for codigo in codigo%}
                 <ul>{{codigo}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for strike in strike%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for strike in strike%}
                 <ul>{{strike}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for descoberta in descoberta%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for descoberta in descoberta%}
                 {%if descoberta > 5%}
-                <ul style="color: red"><b>{{descoberta}}</b></ul>
+              <ul style="color: red"><b>{{descoberta}} MM</b></ul>
                 {%else%}
-                <ul>{{descoberta}}</ul>
+                <ul>{{descoberta}} MM</ul>
                 {%endif%}
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for titulares in titulares%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for titulares in titulares%}
                 <ul>{{titulares}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for lancadores in lancadores%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for lancadores in lancadores%}
                 <ul>{{lancadores}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for codigo in codigoP%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for codigo in codigoP%}
                 <ul>{{codigo}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for strike in strikeP%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for strike in strikeP%}
                 <ul>{{strike}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for descoberta in descobertaP%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for descoberta in descobertaP%}
                 {%if descoberta > 4%}
-                <ul style="color: red"><b>{{descoberta}}</b></ul>
+              <ul style="color: red"><b>{{descoberta}} MM</b></ul>
                 {%else%}
-                <ul>{{descoberta}}</ul>
+                <ul>{{descoberta}} MM</ul>
                 {%endif%}
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for titulares in titularesP%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for titulares in titularesP%}
                 <ul>{{titulares}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-            <td>
-              <ul>
-                {%for lancadores in lancadoresP%}
+              {%endfor%}
+            </ul>
+          </td>
+          <td>
+            <ul>
+              {%for lancadores in lancadoresP%}
                 <ul>{{lancadores}}</ul>
-                {%endfor%}
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+              {%endfor%}
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+  </table>
 </div>
+
 {% endblock %}

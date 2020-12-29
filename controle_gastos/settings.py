@@ -15,13 +15,14 @@ SECRET_KEY = '-raoyw(+d=ma)c5$3&ql$*@l1k*h*wwdba#6+uc!e2jtgwgl%u'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['investsystem.ngrok.io','127.0.0.1','http://localhost:8000/']
+ALLOWED_HOSTS = ['investsystem.ngrok.io','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -34,8 +35,6 @@ INSTALLED_APPS = [
     'accounts',
 
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,7 +51,7 @@ ROOT_URLCONF = 'controle_gastos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -113,6 +112,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

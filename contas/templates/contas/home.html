@@ -7,154 +7,210 @@
 
 <!-- Inicio do processo logico-->
 <style>
-    ul  {
-     color: black;
-     font-family: verdana;
-     font-size: 85%;
-     text-align: right;
+    ul {
+        color: black;
+        font-family: verdana;
+        font-size: 85%;
+        text-align: right;
     }
 
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
     }
 
 
-    th, td {
-      padding: 1px;
-      text-align: center;
+    th,
+    td {
+        padding: 1px;
+        text-align: center;
     }
 
     tbody {
-      font-size: 85%;
-      letter-spacing: 1px
-      padding: 1px;
-      text-align: center;
-    }
-    thead {
-
-    td{
-      text-align: center;
-      1px solid black;
+        font-size: 85%;
+        letter-spacing: 1px padding: 1px;
+        text-align: center;
     }
 
+    thead,
+    td {
+        text-align: center;
+        1px solid black;
+    }
+
+    .scroll {
+        max-height: 60px;
+        overflow: auto;
+    }
+
+    table {
+        width: 500px;
+    }
 </style>
 
-<div class="table-responsive-sm">
+<div class="col-lg-12">
     <table class="table">
         <caption>InvestSystem</caption>
         <thead>
-        <tr>
-            <th><b>Strike</b></th>
-            <th><b>Ativo</b></th>
-            <th><b>Cotacão</b></th>
-            <th><b>Sinal</b></th>
-            <th><b>Vencimento</b></th>
-            <th><b>TIR</b></th>
-            <th><b>Protecão</b></th>
-            <th><b>Liquidez</b></th>
-        </tr>
+            <tr>
+                <th>Ativo</th>
+                <th>Strike</th>
+                <th>Cotacão</th>
+                <th>Sinal</th>
+                <th>Vencimento</th>
+                <th>TIR</th>
+                <th>Protecão</th>
+                <th>Liquidez</th>
+                <th style="background-color: rgb(255, 155, 205);">Vol Implicita</th>
+                <th style="background-color: rgb(255, 155, 205);">Delta</th>
+                <th style="background-color: rgb(255, 155, 205);">Theta</th>
+                <th style="background-color: rgb(255, 155, 205);">Gamma</th>
+                <th style="background-color: rgb(255, 155, 205);">PJusto</th>
+            </tr>
         </thead>
+
         <tbody>
-        <tr>
-            <td>
-                <ul>
-                    {% for strike in PUT%}
-                    {%if strike == "Coluna1"%}
-                    <ul><b>Strike</b></ul>
-                    {%else%}
-                    <ul>{{strike}}</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for ativo in ATIVO%}
-                    {%if ativo == "ATIVO"%}
-                    <ul><b>Ativo</b></ul>
-                    {%else%}
-                    <ul>{{ativo}}</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for preco in PRECO%}
-                    {%if preco == "Real Time"%}
-                    <ul><b>Cotação</b></ul>
-                    {% else %}
-                    <ul>R$ {{preco}}</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for rastreador in RASTREADOR%}
-                    {%if rastreador == "Robo PUT"%}
-                    <ul><b>Sinal</b></ul>
-                    {%else%}
-                    {%if rastreador == "Aguardar"%}
-                    <ul style="color:red">{{rastreador}}</ul>
-                    {% else %}
-                    {%if rastreador == "Montar"%}
-                    <ul style="color: Green">
-                        {{rastreador}}
+            <tr>
+                <th>
+                    <ul>
+                        {% for ativo in ATIVO%}
+                        {%if ativo == "ATIVO"%}
+                        <ul><b>Ativo</b></ul>
+                        {%else%}
+                        <ul>{{ativo}}</ul>
+                        {%endif%}
+                        {%endfor%}
                     </ul>
-                    {% else %}
-                    <ul style="color: black"><b>{{rastreador}}</b></ul>
-                    {%endif%}
-                    {%endif%}
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for vencimento in VENCIMENTO%}
-                    {%if vencimento == "VENC."%}
-                    <ul><b>Vencimento</b></ul>
-                    {%else%}
-                    <ul>{{vencimento}}</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for tir in TIR%}
-                    {%if tir == "0"%}
-                    <ul><b>=======</b></ul>
-                    {%else%}
-                    <ul>{{tir}}%</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for protecao in PROTECAO%}
-                    <ul>{{protecao}}%</ul>
-                    {%endfor%}
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    {% for Negocios in Negocios%}
-                    {%if Negocios == "Negocios"%}
-                    <ul><b>Negocios</b></ul>
-                    {%else%}
-                    <ul>{{Negocios}}</ul>
-                    {%endif%}
-                    {%endfor%}
-                </ul>
-            </td>
-        </tr>
+                </th>
+                <td>
+                    <ul>
+                        {% for strike in PUT%}
+                        {%if strike == "Coluna1"%}
+                        <ul><b>Strike</b></ul>
+                        {%else%}
+                        <ul>{{strike}}</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for preco in PRECO%}
+                        {%if preco == "Real Time"%}
+                        <ul><b>Cotação</b></ul>
+                        {% else %}
+                        <ul>R$ {{preco}}</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for rastreador in RASTREADOR%}
+                        {%if rastreador == "Robo PUT"%}
+                        <ul><b>Sinal</b></ul>
+                        {%else%}
+                        {%if rastreador == "Aguardar"%}
+                        <ul style="color:red">{{rastreador}}</ul>
+                        {% else %}
+                        {%if rastreador == "Montar"%}
+                        <ul style="color: Green">
+                            {{rastreador}}
+                        </ul>
+                        {% else %}
+                        <ul style="color: black"><b>{{rastreador}}</b></ul>
+                        {%endif%}
+                        {%endif%}
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for vencimento in VENCIMENTO%}
+                        {%if vencimento == "VENC."%}
+                        <ul><b>Vencimento</b></ul>
+                        {%else%}
+                        <ul>{{vencimento}}</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for tir in TIR%}
+                        {%if tir == "0"%}
+                        <ul><b>=======</b></ul>
+                        {%else%}
+                        <ul>{{tir}}%</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for protecao in PROTECAO%}
+                        <ul>{{protecao}}%</ul>
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for Negocios in Negocios%}
+                        {%if Negocios == "Negocios"%}
+                        <ul><b>Negocios</b></ul>
+                        {%else%}
+                        <ul>{{Negocios}}</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {%for VolImplicita in VolImplicita%}
+                        {%if VolImplicita == 'Vol Implicita'%}
+                        <ul>Volatilidade</i></ul>
+                        {%else%}
+                        <ul>{{VolImplicita}}</ul>
+                        {%endif%}
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {%for Delta in Delta%}
+                        <ul>{{Delta}}</ul>
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {%for Theta in Theta%}
+                        <ul>{{Theta}}</ul>
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {%for Gamma in Gamma%}
+                        <ul>{{Gamma}}</ul>
+                        {%endfor%}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {%for PJusto in PJusto%}
+                        <ul>{{PJusto}}</ul>
+                        {%endfor%}
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
+
 
 
 {% endblock %}
