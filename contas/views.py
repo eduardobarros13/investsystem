@@ -61,34 +61,31 @@ def submit_login(request):
 
 @login_required(login_url='/login/')
 def put(request):
+    while True:
+        data = {}
+        banco = pd.read_excel('InvestSystem3.0_django.xlsm',
+                                   sheet_name='Rastreador_PUT',header=8)
 
-    data = {}
-    banco = pd.read_excel('InvestSystem3.0_django.xlsm',
-                            sheet_name='Rastreador_PUT',header=8)
+        banco['Strike VS Cot. (%)'] = pd.to_numeric(banco['Strike VS Cot. (%)']*100, errors='coerce')
+        banco['TIR (%)'] = pd.to_numeric(banco['TIR (%)']*100, errors='coerce')
+        banco['VENC.'] = pd.to_datetime(banco['VENC.'], errors='coerce')
+        banco['VENC.'] = banco['VENC.'].dt.strftime("%d/%m/%Y")
 
-    banco['Strike VS Cot. (%)'] = pd.to_numeric(banco['Strike VS Cot. (%)']*100, errors='coerce')
-    banco['TIR (%)'] = pd.to_numeric(banco['TIR (%)']*100, errors='coerce')
-    banco['VENC.'] = pd.to_datetime(banco['VENC.'], errors='coerce')
-    banco['VENC.'] = banco['VENC.'].dt.strftime("%d/%m/%Y")
-    banco['Strike VS Cot. (%)'] = round(banco['Strike VS Cot. (%)'], 2)
-    banco['TIR (%)'] = round(banco['TIR (%)'], 2)
-    data['PUT'] = banco['STRIKE']       
-    data['ATIVO'] = banco['ATIVO']
-    data['PRECO'] = banco['Real Time']
-    data['RASTREADOR'] = banco['Robo PUT']
-    data['VENCIMENTO'] = banco['VENC.']
-    data['TIR'] = banco['TIR (%)']
-    data['PROTECAO'] = banco['Strike VS Cot. (%)']
-    data['Negocios'] = banco['Negocios']
+        banco['Strike VS Cot. (%)'] = round(banco['Strike VS Cot. (%)'], 2)
+        banco['TIR (%)'] = round(banco['TIR (%)'], 2)
 
-    data['VolImplicita'] = banco['Vol Implicita']
-    data['Delta'] = banco['Delta']
-    data['Theta'] = banco['Theta']
-    data['Gamma'] = banco['Gamma']
-    data['PJusto'] = banco['Pjusto']
+        data['PUT'] = banco['STRIKE']       
+        data['ATIVO'] = banco['ATIVO']
+        data['PRECO'] = banco['Real Time']
+        data['RASTREADOR'] = banco['Robo PUT']
+        data['VENCIMENTO'] = banco['VENC.']
 
-    return render(request, 'contas/home.html', data)
-  
+        data['TIR'] = banco['TIR (%)']
+        data['PROTECAO'] = banco['Strike VS Cot. (%)']
+        data['Negocios'] = banco['Negocios']
+
+        return render(request, 'contas/home.html', data)
+    time.sleep(6*5)
 
 @login_required(login_url='/login/')
 def news(request):
@@ -99,6 +96,15 @@ def news(request):
 
     data['Manchete'] = news['Manchete']
     data['MancheteCNBC'] = cnbc['Manchete']
+
+    #connection = sqlite3.connect('noticias.db')
+    #noticiasValor = pd.read_sql('select * from noticias', connection)
+    #data['Manchete'] = noticiasValor['Manchetes Valor']
+
+    #connection = sqlite3.connect('noticiasCNBC.db')
+    #noticiasCNBC = pd.read_sql('select * from noticiasCNBC', connection)
+    #data['MancheteCNBC'] = noticiasCNBC['Manchetes CNBC']
+
 
     return render(request, 'contas/news.html', data)
 
@@ -323,6 +329,35 @@ def dividendos(request):
     return render(request, 'contas/dividendos.html', data)
 
 @login_required
+<<<<<<< HEAD
+<<<<<<< HEAD
+def teste(request):
+    data = {}
+    posicaoBBAS = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Relatorio_InvestSystem.xlsx",sheet_name='Posicao_PETR4',header=0)
+
+    posicaoBBAS['Descobertas'] = round(posicaoBBAS['Descobertas'], 2)
+    posicaoBBAS['Descobertas.1'] = round(posicaoBBAS['Descobertas.1'], 2)
+
+    ###Coleta dados de Call##
+    data['codigo'] = list(posicaoBBAS['Código'])
+    data['strike'] = posicaoBBAS['Strike']
+    data['descoberta'] = list(posicaoBBAS['Descobertas'])
+    data['titulares'] = posicaoBBAS['Titulares']
+    data['lancadores'] = posicaoBBAS['Lançadores']
+    ###Coleta dados de Put##
+    data['codigoP'] = posicaoBBAS['Código.1']
+    data['strikeP'] = posicaoBBAS['Strike.1']
+    data['descobertaP'] = list(posicaoBBAS['Descobertas.1'])
+    data['titularesP'] = posicaoBBAS['Titulares.1']
+    data['lancadoresP'] = posicaoBBAS['Lançadores.1']
+
+    return render(request, 'contas/teste.html', data)
+
+@login_required
+=======
+>>>>>>> parent of 99196487... Ajustes no grafico
+=======
+>>>>>>> parent of 99196487... Ajustes no grafico
 def carteira(request):
     data = {}
     return render(request, 'contas/carteira.html', data)
