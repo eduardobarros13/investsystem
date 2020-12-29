@@ -330,6 +330,7 @@ def dividendos(request):
 
 @login_required
 <<<<<<< HEAD
+<<<<<<< HEAD
 def teste(request):
     data = {}
     posicaoBBAS = pd.read_excel("C:/Users/Eduardo/OneDrive/Trade_Edu/Relatorio_InvestSystem.xlsx",sheet_name='Posicao_PETR4',header=0)
@@ -353,6 +354,8 @@ def teste(request):
     return render(request, 'contas/teste.html', data)
 
 @login_required
+=======
+>>>>>>> parent of 99196487... Ajustes no grafico
 =======
 >>>>>>> parent of 99196487... Ajustes no grafico
 def carteira(request):
