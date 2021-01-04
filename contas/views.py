@@ -323,7 +323,7 @@ def home1(request):
 def dividendos(request):
     data = {}
 
-    tabela = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/dividendos.xlsx')
+    tabela = pd.read_excel('C:/Users/Eduardo/OneDrive/Trade_Edu/Novo_BD/BD_dividendos.xlsx')
 
     data['Empresa'] = list(tabela['Empresa'])
     data['Tipo'] = tabela['Tipo']
