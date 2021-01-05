@@ -1,5 +1,5 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "venv/bin/python",
+    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
     "workbench.colorTheme": "Dracula"
 }
