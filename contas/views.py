@@ -333,6 +333,11 @@ def dividendos(request):
     data['Valor2'] = list(tabela['Valor2'])
     return render(request, 'contas/dividendos.html', data)
 
+
+def blog(request):
+    data = {}
+    return render(request, 'contas/blog.html', data)
+
 @login_required
 def teste(request):
     data = {}
