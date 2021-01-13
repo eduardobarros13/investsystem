@@ -49,6 +49,8 @@ urlpatterns = [
     path('mapaitub4/', mapaITUB, name='url_mapaitub4'),
     path('mapabbdc4/', views.mapaBBDC, name='url_mapabbdc4'),
     path('planos/', views.planos, name='url_planos'),
+    path('blog/', views.blog, name='url_blog'),
+
 
 
     path('dividendos/', dividendos, name='url_dividendos'),
