@@ -40,5 +40,9 @@ class Trade(models.Model):
 class Evolucao(models.Model):
       data = models.DateTimeField()
       valor = models.DecimalField(max_digits=7, decimal_places=2)
+      observacoes = models.TextField(null=True, blank=True)
+      title = models.CharField(max_length=255)
+      def __str__(self):
+            return self.title
 
 #Create your models here.
