@@ -7,49 +7,35 @@
 
 <!-- Inicio do processo logico-->
 <style>
-    <style>ul {
+    ul{
         color: black;
         font-family: verdana;
         font-size: 85%;
         text-align: right;
     }
 
-    table,
-        {
+    table{    
         left: 5%;
     }
 
-    table,
-    th,
-    td {
+    table,th,td {
         border: 1px solid black;
         border-collapse: collapse;
     }
 
-
-    th,
-    td {
+    th,td {
         padding: 1px;
         text-align: center;
     }
 
     tbody {
         font-size: 85%;
-        letter-spacing: 1px padding: 1px;
+        letter-spacing: 1px padding 1px;
         text-align: center;
     }
-
-    thead {
-
-        td {
-            text-align: center;
-            1px solid black;
-        }
-
-        .col-m-4 {
-
-            padding: 10px;
-        }
+    thead,td {
+        text-align: center;
+    }
 </style>
 <div class="container-fluid">
     <div class="row">
@@ -101,12 +87,11 @@
                             </td>
                             <td>
                                 <ul>{% for LucroAcao in LucroAcao%}
-                                    {%if LucroAcao < 0%}
-                                    <ul style="color: red"><b>{{LucroAcao}}</b></ul>
-                                    {%else%}
-                                    <ul>{{LucroAcao}}</ul>
-                                    {%endif%}
-                                    {%endfor%}
+                                    {%if LucroAcao < 0%} <ul style="color: red"><b>{{LucroAcao}}</b></ul>
+                                {%else%}
+                                <ul>{{LucroAcao}}</ul>
+                                {%endif%}
+                                {%endfor%}
                                 </ul>
                             </td>
                             <td>
@@ -120,57 +105,6 @@
                 </table>
             </div>
         </div>
-        <div class="col-m-4">
-
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/symbols/BMFBOVESPA-PETR4/"
-                        rel="noopener" target="_blank"><span class="blue-text"></span></a>
-                </div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
-                        {
-                            "symbol": "BMFBOVESPA:PETR4",
-                                "colorTheme": "dark",
-                                    "isTransparent": false,
-                                        "largeChartUrl": "",
-                                            "displayMode": "regular",
-                                                "width": "400",
-                                                    "height": "500",
-                                                        "locale": "br"
-                        }
-                    </script>
-            </div>
-        </div>
-        <div class="col-m-4">
-            <!-- TradingView Widget END -->
-
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/symbols/BMFBOVESPA-PETR4/"
-                        rel="noopener" target="_blank"><span class="blue-text"></span></a>
-                </div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
-                        {
-                            "symbol": "BMFBOVESPA:ITUB4",
-                                "colorTheme": "dark",
-                                    "isTransparent": false,
-                                        "largeChartUrl": "",
-                                            "displayMode": "regular",
-                                                "width": "400",
-                                                    "height": "500",
-                                                        "locale": "br"
-                        }
-                    </script>
-            </div>
-            <!-- TradingView Widget END -->
-
-
-        </div>
-
     </div>
 </div>
 
